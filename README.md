@@ -4,13 +4,12 @@ CSCareer is a quiz-based hiring systtem for computer-science related departments
 
 ### Reports
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
 [Project Proposal](https://github.com/hamzapehlivan/Database-Project)
+
 Design Report
+
 Final Report
-```
+
 ### Team Members
 
 Hamza PEHLİVAN <t> Meryem EFE <t> Selen UYSAL <t> Fırat YÖNAK
