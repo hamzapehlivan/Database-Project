@@ -34,4 +34,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Team Members
 
-Hamza PEHLİVAN    Meryem EFE    Selen UYSAL   Fırat YÖNAK
+Hamza PEHLİVAN <t> Meryem EFE <t> Selen UYSAL <t> Fırat YÖNAK
