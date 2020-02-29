@@ -7,9 +7,9 @@ CSCareer is a quiz-based hiring systtem for computer-science related departments
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-**[Project Proposal] (https://github.com/hamzapehlivan/Database-Project)
-**Design Report
-**Final Report
+[Project Proposal](https://github.com/hamzapehlivan/Database-Project)
+Design Report
+Final Report
 ```
 ### Team Members
 
