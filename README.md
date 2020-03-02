@@ -1,6 +1,6 @@
-## Welcome to CSCareer Documetation Page
+## Welcome to CSCareer Documentation Page
 
-CSCareer is a quiz-based hiring systtem for computer-science related departments. It will be implemented as the term project of CS353 Database Systems course. For further information, you can look at the following reports.
+CSCareer is a quiz-based hiring system for computer-science related departments. It will be implemented as the term project of CS353 Database Systems course. For further information, you can look at the following reports.
 
 ### Reports
 
