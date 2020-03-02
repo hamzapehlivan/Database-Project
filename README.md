@@ -4,7 +4,7 @@ CSCareer is a quiz-based hiring system for computer-science related departments.
 
 ### Reports
 
-[Project Proposal](https://drive.google.com/open?id=1SZzGn8huZqAejkyXpK2Tb5ECA4wsUYjA)
+[Project Proposal](docs/Proposal.pdf)
 
 Design Report
 
