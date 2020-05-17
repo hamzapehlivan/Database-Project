@@ -4,9 +4,10 @@
 	<link rel="stylesheet" type="text/css" href="css/login-register-style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<title>Developer >> Login</title>
+	<title>Developer >> Register</title>
 </head>
 <body>
+	<!-- Navigation Bar -->
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
     		<div class="navbar-header">
@@ -19,8 +20,8 @@
         			<span class="caret"></span>
 					</a>
         			<ul class="dropdown-menu">
-          				<li class="active"><a href="">Sign In</a></li>
-          				<li><a href="developer-register.php">Sign Up</a></li>
+          				<li><a href="developer-login.php">Sign In</a></li>
+          				<li class="active"><a href="">Sign Up</a></li>
         			</ul>
       			</li>
       			<li class="dropdown">
@@ -52,26 +53,41 @@
 	unset($_SESSION['error']);
 	?>
 	
+	<!-- Container which includes the form -->
 	<div class="container">
 		<div class="login-box">
 			<div class="row">
 				<div class="col-md-2"></div>
-				<div class="col-md-8 login-center">
-				<h1 class="text-center">Developer Login Form</h1>
-				<form action="developer-login-validation.php" method="post">
+				<div class="col-md-10 login-center">
+				<h1 class="text-center">Developer Register Form</h1>
+				<form action="developer-register-validation.php" method="post">
 					<div class="form-group">
+						<label class="label control-label">Full Name</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" name="fullname" class="form-control" required>
+						</div>
 						<label class="label control-label">E-mail</label>
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-							<input name="email" type="email" class="form-control" required>
+							<input type="email" name="email" class="form-control" required>
 						</div>
 						<label class="label control-label">Password</label>
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
 							<input type="password" name="password" class="form-control" required>
 						</div>
-						<button type="submit" class="btn btn-default">LOGIN</button>
-						<p class="text-center">Not a member yet? <a href="developer-register.php">Sign Up</a></p>
+						<label class="label control-label">Confirm Password</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+						  <input type="password" name="confirmpassword" class="form-control" required>
+						</div>
+						<label class="label control-label">Phone</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+							<input name="phone" type="tel" class="form-control" placeholder="555-123-4567" size="10">
+						</div>
+						<button type="submit" class="btn btn-default">Register</button>
 					</div>
 				</form>
 				</div>
