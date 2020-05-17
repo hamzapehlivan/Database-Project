@@ -1,0 +1,73 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url("images/background_login_register.jpg");
+	background-size: cover;
+	background-position: center;
+	
+}
+
+h1{
+	font-size: 40px;
+	color: white;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.label{
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.input-group{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.input-group-addon{
+	border-radius: 0px;
+	border: 0px;
+	border-bottom: 1px solid white;
+	font-size: 18px;
+	color: gray;
+}
+
+.form-control{
+	background: transparent;
+	border-radius: 0px;
+	border: 1px solid white;
+	padding: 15px;
+	color: white;
+	font-size: 21px;
+}
+
+.login-box{
+	max-width: 700px;
+	float: none;
+	margin: 60px auto;
+}
+
+.login-center{
+	background: rgba(211, 211, 211, 0.3);
+	padding: 30px;
+}
+
+.btn-default{
+	border-radius: 0px;
+	width: auto;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+p{
+	font-size: 18px;
+	color: white;
+}
+
+option{
+	color: #666;
+}
