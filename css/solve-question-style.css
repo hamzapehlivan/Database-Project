@@ -1,0 +1,21 @@
+.buttons {
+	margin-top : 60px;
+	margin-left : 100px;
+}
+.q-no{
+	color: red;
+	padding : 10px;
+}
+.q-description{
+	color: blue;
+	padding : 10px;
+}
+.empty {
+	margin-top : 15px;
+}
+.clockTimer {
+	margin-left : 20px;
+}
+.container {
+	margin-top:30px;
+}
