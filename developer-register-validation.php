@@ -52,6 +52,10 @@ if($num == 1){
 	$_SESSION['profileid'] = $profileid;
 	$_SESSION['email'] = $email;
 	$_SESSION['fullname'] = $fullname;
+	
+	// Set developer as logged in
+	$_SESSION['developer_logged_in'] = true;
+	
 	header('location:developer.php');
 }
 

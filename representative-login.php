@@ -7,6 +7,12 @@
 	<title>Representative >> Login</title>
 </head>
 <body>
+	<!-- If representative didn't sign out, direct her/him to representative homepage -->
+	<?php
+		session_start();
+      	if(isset($_SESSION['representative_logged_in']))
+			header("Location: representative.php");  
+	?>
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
     		<div class="navbar-header">
@@ -36,6 +42,21 @@
     		</ul>
   		</div>
 	</nav>
+	
+	<!-- Display error messages if there is any -->
+	<?php
+	if(isset($_SESSION['error']))
+	{
+	?>
+	<div class="alert alert-danger fade in">
+	    <a href="#" class="close" data-dismiss="alert">&times;</a>
+	    <strong>Error!</strong> <?php echo $_SESSION['error']; ?>
+	</div>
+	<?php
+	}
+	unset($_SESSION['error']);
+	?>
+	
 	<div class="container">
 		<div class="login-box">
 			<div class="row">
@@ -53,9 +74,9 @@
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
 							<input type="password" name="password" class="form-control" placeholder="**********" required>
-						</div>					
-						<a href="#"><div class="btn btn-default">LOGIN</div></a>
-						<p class="text-center">Not a member yet? <a href="#">Sign Up</a></p>
+						</div>
+						<button type="submit" class="btn btn-default">LOGIN</button>
+						<p class="text-center">Not a member yet? <a href="representative-register.php">Sign Up</a></p>
 					</div>
 				</form>
 				</div>

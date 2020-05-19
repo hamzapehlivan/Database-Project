@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-	<title>CSCareer</title>
+	<title>About</title>
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,7 +11,8 @@
 		body{
 			margin: 0;
 			padding: 0;
-			background-image: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url("css/images/background_login_register.jpg");
+			background-image: linear-gradient(rgba(94,109,140,0.8), rgba(125,125,152,0.9)), url("css/images/background_login_register.jpg");
+/*			background-image: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url("css/images/background.png");*/
 			background-size: cover;
 			background-position: center;
 
@@ -21,14 +22,14 @@
 			height: 90vh;
 		}
 		h1{
-			color: lightgray;
+			color: white;
 			text-shadow: 1.5px 1.5px gray;
 			font-size: 5vw;
 			margin-top: 15vh;
 			font-family: Berkshire Swash;
 		}
 		p{
-			color: lightgray;
+			color: white;
 			padding-left: 2vw;
 			top: 0; right: 0; bottom: 0; left: 0;
 			font-family: Berkshire Swash;

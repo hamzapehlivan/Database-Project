@@ -4,15 +4,20 @@
 	<link rel="stylesheet" type="text/css" href="css/developer-profile-style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<title>Developer</title>
+	<title>Developer >> Profile</title>
 
 	
 </head>
 <body>
+	<!-- If developer sign out, direct her/him to homepage -->
+	<?php
+		session_start();
+      	if(!isset($_SESSION['developer_logged_in']))
+			header("Location: index.php");  
+	?>	
 	<!-- Take developer's info -->
 	<?php
 	require_once ('connect.php');
-	session_start();
 	
 	$fullname = $_SESSION['fullname'];
 	$email = $_SESSION['email'];
@@ -142,7 +147,7 @@
       			<li><a href="">Interview Requests</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
-      			<li><a href="index.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
 		    </ul>
   		</div>
 	</nav>

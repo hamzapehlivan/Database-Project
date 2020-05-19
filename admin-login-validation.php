@@ -19,29 +19,26 @@ if($num == 1){
     $userid = $row["user_id"];
     $fullname = $row["fullname"]; 
 	
-	// Get profile_id
-	$result_profile = mysqli_query($conn, " select profile_id from developer where developer_id = '$userid' " );
-	$num_of_developer = mysqli_num_rows($result_profile);
-	if( $num_of_developer == 1){
-		$row = mysqli_fetch_assoc($result_profile);
-		$profileid = $row["profile_id"];
-		
-		$_SESSION['developerid'] = $userid;
-		$_SESSION['profileid'] = $profileid;
+	// Get admin
+	$result_admin = mysqli_query($conn, " select * from admin where admin_id = '$userid' " );
+	$num_of_admin = mysqli_num_rows($result_admin);
+	if( $num_of_admin == 1){
+				
+		$_SESSION['admin_id'] = $userid;
 		$_SESSION['email'] = $email;
 		$_SESSION['fullname'] = $fullname;
 		
 		// Set developer as logged in
-		$_SESSION['developer_logged_in'] = true;
+		$_SESSION['admin_logged_in'] = true;
 				  
-		header('location:developer.php');
+		header('location:admin.php');
 	} else {
-		$_SESSION['error'] = 'This is not developer account. Please, try a valid account!';
-		header('location:developer-login.php');
+		$_SESSION['error'] = 'This is not admin account. Please, try a valid account!';
+		header('location:admin-login.php');
 	}
 } else {
 	$_SESSION['error'] = 'This account cannot be found! You may enter wrong email or password.';
-	header('location:developer-login.php');
+	header('location:admin-login.php');
 }
 
 ?>

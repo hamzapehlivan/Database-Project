@@ -26,5 +26,12 @@ if( $newPassword != $confirmPassword ){
 	}
 
 }
-header('location:developer-profile.php');
+if( isset($_SESSION['developer_logged_in'])){
+	header('location:developer-profile.php');
+} else if( isset($_SESSION['representative_logged_in'])){
+	header('location:representative-profile.php');
+} else if( isset($_SESSION['admin_logged_in'])){
+	header('location:admin-profile.php');
+}
+
 ?>

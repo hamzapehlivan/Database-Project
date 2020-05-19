@@ -4,26 +4,25 @@
 	<link rel="stylesheet" type="text/css" href="css/login-register-style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<title>Developer</title>
+	<title>Admin</title>
 </head>
 <body>
-	<!-- If developer sign out, direct her/him to homepage -->
+	<!-- If admin sign out, direct her/him to admin login page -->
 	<?php
 		session_start();
-      	if(!isset($_SESSION['developer_logged_in']))
-			header("Location: index.php");  
+      	if(!isset($_SESSION['admin_logged_in']))
+			header("Location: admin-login.php");  
 	?>
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
     		<div class="navbar-header">
-      			<a class="navbar-brand" href="index.php">CSCareer</a>
+      			<a class="navbar-brand">CSCareer</a>
     		</div>
     		<ul class="nav navbar-nav">
       			<li class="active"><a href="">Home</a></li>
-				<li><a href="developer-profile.php">Profile</a></li>
-				<li><a href="">Attempt Quiz</a></li>
-      			<li><a href="">Quiz Results</a></li>
-      			<li><a href="">Interview Requests</a></li>
+				<li><a href="admin-profile.php">Profile</a></li>
+				<li><a href="">Create Quizzes</a></li>
+      			<li><a href="">See Quizzes</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
       			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
@@ -33,6 +32,7 @@
 	
 	<div class="container">
 
-	</div>	
+	</div>
+	
 </body>
 </html>

@@ -16,13 +16,14 @@ $preferredWorkingLocations = $_POST['preferredWorkingLocations'] ? $_POST['prefe
 $rolePreferences = $_POST['rolePreferences'] ? $_POST['rolePreferences'] : "";
 $status = $_POST['status'] ? 1 : 0;
 
+echo $status;
 
 // Update phone from user table
 $update_phone = " update user set phone = '$phoneNumber' where email = '$email' "; 
 mysqli_query($conn, $update_phone);
 
 // Update profile informations
-$update_profile = " update profile set linkedin_link = '$linkedinLink', github_link = '$githubLink', cv_link = '$cvLink', experienced_years = '$experiencedYears', status = '$status', role_preferences = '$rolePreferences' where profile_id = $profileid ";
+$update_profile = " update profile set linkedin_link = '$linkedinLink', github_link = '$githubLink', cv_link = '$cvLink', experienced_years = '$experiencedYears', status = {$status}, role_preferences = '$rolePreferences' where profile_id = $profileid ";
 mysqli_query($conn, $update_profile);
 
 /*********************************

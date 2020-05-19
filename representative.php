@@ -4,14 +4,14 @@
 	<link rel="stylesheet" type="text/css" href="css/login-register-style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<title>Developer</title>
+	<title>Representative</title>
 </head>
 <body>
-	<!-- If developer sign out, direct her/him to homepage -->
+	<!-- If representative sign out, direct her/him to homepage -->
 	<?php
 		session_start();
-      	if(!isset($_SESSION['developer_logged_in']))
-			header("Location: index.php");  
+      	if(!isset($_SESSION['representative_logged_in']))
+			header("Location: index.php");
 	?>
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
@@ -20,10 +20,9 @@
     		</div>
     		<ul class="nav navbar-nav">
       			<li class="active"><a href="">Home</a></li>
-				<li><a href="developer-profile.php">Profile</a></li>
-				<li><a href="">Attempt Quiz</a></li>
-      			<li><a href="">Quiz Results</a></li>
-      			<li><a href="">Interview Requests</a></li>
+				<li><a href="representative-profile.php">Profile</a></li>
+				<li><a href="">See Developers</a></li>
+      			<li><a href="">Check Interview Requests</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
       			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>

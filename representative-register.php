@@ -7,6 +7,12 @@
 	<title>Representative >> Register</title>
 </head>
 <body>
+	<!-- If representative didn't sign out, direct her/him to representative homepage -->
+	<?php
+		session_start();
+      	if(isset($_SESSION['representative_logged_in']))
+			header("Location: representative.php");  
+	?>
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
     		<div class="navbar-header">
@@ -36,6 +42,21 @@
     		</ul>
   		</div>
 	</nav>
+	
+	<!-- Display error messages if there is any -->
+	<?php
+	if(isset($_SESSION['error']))
+	{
+	?>
+	<div class="alert alert-danger fade in">
+	    <a href="#" class="close" data-dismiss="alert">&times;</a>
+	    <strong>Error!</strong> <?php echo $_SESSION['error']; ?>
+	</div>
+	<?php
+	}
+	unset($_SESSION['error']);
+	?>
+	
 	<div class="container">
 		<div class="login-box">
 			<div class="row">

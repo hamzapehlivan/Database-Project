@@ -7,6 +7,12 @@
 	<title>Developer >> Login</title>
 </head>
 <body>
+	<!-- If developer didn't sign out, direct her/him to developer homepage -->
+	<?php
+		session_start();
+      	if(isset($_SESSION['developer_logged_in']))
+			header("Location: developer.php");  
+	?>	
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
     		<div class="navbar-header">
@@ -39,7 +45,6 @@
 	
 	<!-- Display error messages if there is any -->
 	<?php
-	session_start();
 	if(isset($_SESSION['error']))
 	{
 	?>

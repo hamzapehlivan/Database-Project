@@ -11,7 +11,8 @@
 		body{
 			margin: 0;
 			padding: 0;
-			background-image: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url("css/images/background_login_register.jpg");
+			background-image: linear-gradient(rgba(94,109,140,0.8), rgba(125,125,152,0.9)), url("css/images/background_login_register.jpg");
+/*			background-image: linear-gradient(rgba(10, 20, 100, 0.5), rgba(0, 20, 100, 0.5)), url("css/images/background.png");  */
 			background-size: cover;
 			background-position: center;
 
@@ -21,7 +22,7 @@
 			height: 90vh;
 		}
 		h1{
-			color: lightgray;
+			color: white;
 			text-shadow: 3.5px 3.5px gray;
 			font-size: 10vw;
 			margin-top: 25vh;
@@ -29,7 +30,7 @@
 			font-family: Berkshire Swash;
 		}
 		p{
-			color: lightgray;
+			color: white;
 			text-shadow: 1.5px 1.5px gray;
 			padding-left: 20vw;
 			top: 0; right: 0; bottom: 0; left: 0;
@@ -44,8 +45,12 @@
 <body>
 	<?php
 	session_start();	
-	session_unset();
-	session_destroy();
+	// If developer didn't sign out, direct her/him to developer homepage
+	if(isset($_SESSION['developer_logged_in']))
+		header("Location: developer.php");
+	// If representative didn't sign out, direct her/him to representative homepage
+	if(isset($_SESSION['representative_logged_in']))
+		header("Location: representative.php");	
 	?>
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
