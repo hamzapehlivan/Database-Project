@@ -42,14 +42,14 @@ if($num == 1){
     $fullname = $row["fullname"]; 
 	
 	// Get profile_id
-	$result_profileid = mysqli_query($conn, "SELECT LAST_INSERT_ID()") or die(mysqli_error($conn));
-	$row =  mysqli_fetch_array ($result_profileid);
-	$profileid = $row ['LAST_INSERT_ID()'];
+	$result_profile_id = mysqli_query($conn, "SELECT LAST_INSERT_ID()") or die(mysqli_error($conn));
+	$row =  mysqli_fetch_array ($result_profile_id);
+	$profile_id = $row ['LAST_INSERT_ID()'];
 		
 	// Insert profile_id and user_id to developer table
-	$insert_developer = mysqli_query($conn, " insert into developer(developer_id, profile_id) values ('$userid', '$profileid')");
-	$_SESSION['developerid'] = $userid;
-	$_SESSION['profileid'] = $profileid;
+	$insert_developer = mysqli_query($conn, " insert into developer(developer_id, profile_id) values ('$userid', '$profile_id')");
+	$_SESSION['developer_id'] = $userid;
+	$_SESSION['profile_id'] = $profile_id;
 	$_SESSION['email'] = $email;
 	$_SESSION['fullname'] = $fullname;
 	

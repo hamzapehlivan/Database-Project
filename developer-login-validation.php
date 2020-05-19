@@ -24,10 +24,10 @@ if($num == 1){
 	$num_of_developer = mysqli_num_rows($result_profile);
 	if( $num_of_developer == 1){
 		$row = mysqli_fetch_assoc($result_profile);
-		$profileid = $row["profile_id"];
+		$profile_id = $row["profile_id"];
 		
-		$_SESSION['developerid'] = $userid;
-		$_SESSION['profileid'] = $profileid;
+		$_SESSION['developer_id'] = $userid;
+		$_SESSION['profile_id'] = $profile_id;
 		$_SESSION['email'] = $email;
 		$_SESSION['fullname'] = $fullname;
 		

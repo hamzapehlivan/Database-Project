@@ -4,8 +4,8 @@ require_once ('connect.php');
 session_start();
 
 $email = $_SESSION['email'];
-$developerid = $_SESSION['developerid'];
-$profileid = $_SESSION['profileid'];
+$developer_id = $_SESSION['developer_id'];
+$profile_id = $_SESSION['profile_id'];
 
 $phoneNumber = $_POST['phoneNumber'] ? $_POST['phoneNumber'] : "";
 $linkedinLink = $_POST['linkedinLink'] ? $_POST['linkedinLink'] : "";
@@ -23,7 +23,7 @@ $update_phone = " update user set phone = '$phoneNumber' where email = '$email' 
 mysqli_query($conn, $update_phone);
 
 // Update profile informations
-$update_profile = " update profile set linkedin_link = '$linkedinLink', github_link = '$githubLink', cv_link = '$cvLink', experienced_years = '$experiencedYears', status = {$status}, role_preferences = '$rolePreferences' where profile_id = $profileid ";
+$update_profile = " update profile set linkedin_link = '$linkedinLink', github_link = '$githubLink', cv_link = '$cvLink', experienced_years = '$experiencedYears', status = {$status}, role_preferences = '$rolePreferences' where profile_id = $profile_id ";
 mysqli_query($conn, $update_profile);
 
 /*********************************
@@ -31,7 +31,7 @@ Update preferred working locations
 ***********************************/
 
 // Select current prefered cities
-$select_current_cities = " select city from preferredworkinglocations where profile_id = '$profileid' ";
+$select_current_cities = " select city from preferredworkinglocations where profile_id = '$profile_id' ";
 $city_result = mysqli_query($conn, $select_current_cities);
 $current_cities = Array();
 while ($row = mysqli_fetch_array($city_result, MYSQLI_ASSOC)) {
@@ -44,13 +44,13 @@ $deleteCities = array_diff( $current_cities, $preferredWorkingLocations );
 
 // Insert new selected cities
 foreach ($newSelectedCities as $city){
-	$insert_city = " insert into preferredworkinglocations values( '$profileid', '$city') ";
+	$insert_city = " insert into preferredworkinglocations values( '$profile_id', '$city') ";
 	mysqli_query($conn, $insert_city);
 }
 
 // Delete non-selected cities if they were selected before
 foreach ($deleteCities as $city){
-	$delete_city = " delete from preferredworkinglocations where profile_id = '$profileid' and city = '$city' ";
+	$delete_city = " delete from preferredworkinglocations where profile_id = '$profile_id' and city = '$city' ";
 	mysqli_query($conn, $delete_city);
 }
 

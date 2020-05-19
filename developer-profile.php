@@ -21,15 +21,15 @@
 	
 	$fullname = $_SESSION['fullname'];
 	$email = $_SESSION['email'];
-	$developerid = $_SESSION['developerid'];
-	$profileid = $_SESSION['profileid'];
+	$developer_id = $_SESSION['developer_id'];
+	$profile_id = $_SESSION['profile_id'];
 	
 	/********************************* 
 	* Take informations from database
 	**********************************/
 	
 	// Take phone number
-	$phone_query = " select phone from user where user_id = '$developerid' ";
+	$phone_query = " select phone from user where user_id = '$developer_id' ";
 	$phone_query_result = mysqli_query($conn, $phone_query);
 	$phone = mysqli_fetch_array($phone_query_result); 
 	$phone = $phone[0];
@@ -37,7 +37,7 @@
 		$phone = "";
 	
 	// Take info from profile table
-	$profile_query = " select * from profile where profile_id = '$profileid' ";
+	$profile_query = " select * from profile where profile_id = '$profile_id' ";
 	$profile_query_result = mysqli_query($conn, $profile_query);
 	$profile_info = mysqli_fetch_array($profile_query_result, MYSQLI_ASSOC);
 	
@@ -70,7 +70,7 @@
 		$role_preferences = "";
 	
 	// Take prefered working locations
-	$select_current_cities = " select city from preferredworkinglocations where profile_id = '$profileid' ";
+	$select_current_cities = " select city from preferredworkinglocations where profile_id = '$profile_id' ";
 	$city_result = mysqli_query($conn, $select_current_cities);
 	$current_cities = Array();
 	while ($row = mysqli_fetch_array($city_result, MYSQLI_ASSOC)) {
@@ -78,7 +78,7 @@
 	}
 
 	// Take education info
-	$education_query = " select * from educationinfo where profile_id = '$profileid' ";
+	$education_query = " select * from educationinfo where profile_id = '$profile_id' ";
 	$education_query_result = mysqli_query($conn, $education_query);
 	
 	$institution_name = Array();
@@ -97,7 +97,7 @@
 	}
 	
 	// Take work info
-	$work_query = " select * from workinfo where profile_id = '$profileid' ";
+	$work_query = " select * from workinfo where profile_id = '$profile_id' ";
 	$work_query_result = mysqli_query($conn, $work_query);
 	
 	$company_name = Array();
@@ -114,7 +114,7 @@
 	}
 	
 	// Take project info
-	$project_query = " select * from projectinfo where profile_id = '$profileid' ";
+	$project_query = " select * from projectinfo where profile_id = '$profile_id' ";
 	$project_query_result = mysqli_query($conn, $project_query);
 	
 	$project_title = Array();
