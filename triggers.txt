@@ -1,0 +1,5 @@
+INSERT INTO tries VALUES(new.developer_id, (SELECT quiz_id FROM quiz WHERE category_name = "Generalist" ORDER BY RAND() LIMIT 1),3),(new.developer_id, (SELECT quiz_id FROM quiz WHERE category_name = "Data Science" ORDER BY RAND() LIMIT 1),3),
+(new.developer_id, (SELECT quiz_id FROM quiz WHERE category_name = "DevOps" ORDER BY RAND() LIMIT 1),3), 
+(new.developer_id, (SELECT quiz_id FROM quiz WHERE category_name = "Front End" ORDER BY RAND() LIMIT 1),3),
+(new.developer_id, (SELECT quiz_id FROM quiz WHERE category_name = "Machine Learning" ORDER BY RAND() LIMIT 1),3),
+(new.developer_id, (SELECT quiz_id FROM quiz WHERE category_name = "Mobile" ORDER BY RAND() LIMIT 1),3)
