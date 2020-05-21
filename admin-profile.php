@@ -31,9 +31,13 @@
 	$phone_query = " select phone from user where user_id = '$admin_id' ";
 	$phone_query_result = mysqli_query($conn, $phone_query);
 	$phone = mysqli_fetch_array($phone_query_result); 
-	$phone = $phone[0];
-	if( $phone == "null" )
+	
+	if( !is_null(  $phone ) ){
+		$phone = $phone[0];
+	} else {
 		$phone = "";
+	}
+
 		
 	?>
 	
@@ -45,8 +49,7 @@
     		<ul class="nav navbar-nav">
       			<li><a href="admin.php">Home</a></li>
 				<li class="active"><a href="">Profile</a></li>
-				<li><a href="">Create Quizzes</a></li>
-      			<li><a href="">See Quizzes</a></li>
+				<li><a href="edit-quiz.php">Create / Edit Quizzes</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
       			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>

@@ -21,8 +21,7 @@
     		<ul class="nav navbar-nav">
       			<li class="active"><a href="">Home</a></li>
 				<li><a href="admin-profile.php">Profile</a></li>
-				<li><a href="">Create Quizzes</a></li>
-      			<li><a href="">See Quizzes</a></li>
+				<li><a href="edit-quiz.php">Create / Edit Quizzes</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
       			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
