@@ -105,11 +105,11 @@ CREATE TABLE choice (
 
 
 CREATE TABLE category (
-	category_name VARCHAR(15) PRIMARY KEY );
+	category_name VARCHAR(20) PRIMARY KEY );
 
 
 CREATE TABLE categorized_as (
-	category_name 	VARCHAR(15),
+	category_name 	VARCHAR(20),
  	question_id 		INT,
 	PRIMARY KEY(category_name,question_id),
 	FOREIGN KEY (category_name) REFERENCES category (category_name),
@@ -119,7 +119,7 @@ CREATE TABLE categorized_as (
 CREATE TABLE quiz (
 	quiz_id 		INT PRIMARY KEY AUTO_INCREMENT,
   	admin_id 		INT NOT NULL,
-  	category_name 	VARCHAR(15) NOT NULL,
+  	category_name 	VARCHAR(20) NOT NULL,
   	total_questions 	INT NOT NULL,
   	quiz_title 		VARCHAR(10) NOT NULL,
   	time 			TIME NOT NULL,
@@ -160,7 +160,7 @@ CREATE TABLE answer (
 CREATE TABLE tries(
  	developer_id 		INT,
   	quiz_id 		INT,
-	remaining_attemps 	INT NOT NULL DEFAULT 3,
+	remaining_attempts 	INT NOT NULL DEFAULT 3,
 	PRIMARY KEY(developer_id, quiz_id),
    	FOREIGN KEY (developer_id) REFERENCES developer (developer_id),
     	FOREIGN KEY (quiz_id) REFERENCES quiz (quiz_id) );

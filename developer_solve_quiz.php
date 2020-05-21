@@ -50,7 +50,7 @@
 			
 				require_once ('connect.php');
 				session_start();
-				$_SESSION['developer_id'] = 4;
+				
 				$developer_id = $_SESSION['developer_id'];
 				// If developer finsihed succesfully a trial, a quiz will not be solved again
 				$sql = "SELECT issuccessful FROM quiztrial WHERE developer_id = {$developer_id}";
