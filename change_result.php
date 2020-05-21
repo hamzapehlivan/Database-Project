@@ -4,25 +4,16 @@
 	session_start();
 	$attempt_id = $_POST['attempt'];
 	$quiz_id = $_POST['quiz'];
-	
-	// Find categories 
-	$sql = "SELECT category_name, COUNT(*) as categ_no FROM quiz_questions NATURAL JOIN categorized_as WHERE quiz_id = {$quiz_id} GROUP BY category_name";
-	$result = mysqli_query ($conn, $sql) or die(mysqli_error($conn));
-	$goodAtThresholds = [];
-	while ($row = mysqli_fetch_array ($result)) {
-		$goodAtThresholds[$row['category_name']] = $row['categ_no'];
-		$goodAtThresholds [$row['category_name']] = floor ($goodAtThresholds[$row['category_name']] /2) ;
-	
-	}		
-	
-	$sql = "SELECT category_name, SUM(CASE WHEN isCorrect = 1 THEN 1 ELSE 0 END) AS score FROM answer NATURAL JOIN categorized_as "; 
+
+	$sql = "SELECT category_name, SUM(CASE WHEN isCorrect = 1 THEN 1 ELSE -1 END) AS score FROM answer NATURAL JOIN categorized_as "; 
 	$sql .= "WHERE attempt_id = {$attempt_id} GROUP BY category_name";
 	$result = mysqli_query ($conn, $sql) or die(mysqli_error($conn));
+	
 	$goodAt = array();
 	$badAt = array();
-	//$goodAtThreshold = 0;
+	$goodAtThreshold = 0;
 	while ($row = mysqli_fetch_array ($result)) {
-		if ( $row['score'] >= $goodAtThresholds[$row['category_name']]) {
+		if ( $row['score'] >= $goodAtThreshold) {
 			$goodAt[] = $row['category_name'];
 		}
 		else {
@@ -39,7 +30,6 @@
 	$row = mysqli_fetch_array ($result);
 	$totalQuestions= $row ['total_questions'];
 	
-	$totalScore = floor (($totalScore * $totalQuestions / 100));
 	$rate = floor ((5*$totalScore)/$totalQuestions );
 		
 	echo "<div class = 'row' style = 'color:red;'> <div class = 'col-lg'><h2>Overall Performance </h2></div> </div>";
