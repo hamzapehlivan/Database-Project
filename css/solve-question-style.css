@@ -1,3 +1,9 @@
+body{
+	background-image: url("images/quiz_background.png");
+	background-size: cover;
+	background-position : center;
+		
+}
 .buttons {
 	margin-top : 60px;
 	margin-left : 100px;
