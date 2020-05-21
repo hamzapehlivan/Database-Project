@@ -12,7 +12,8 @@ CREATE TABLE Profile (
 	experienced_years	INT,
 	status 			BOOLEAN NOT NULL,
         cv_link 		VARCHAR(50) UNIQUE,
-     	github_link 		VARCHAR(50) UNIQUE );
+     	github_link 		VARCHAR(50) UNIQUE,
+	role_preferences	VARCHAR(200) );
 
 
 CREATE TABLE Developer(
@@ -50,13 +51,6 @@ CREATE TABLE PreferredWorkingLocations(
 	FOREIGN KEY (profile_id) REFERENCES Profile (profile_id) );
 
 
-CREATE TABLE CompanyBlackList (
-	profile_id	INT,
-	company_id	INT,
-	PRIMARY KEY (profile_id, company_id),
-	FOREIGN KEY (profile_id) REFERENCES Profile (profile_id),
-	FOREIGN KEY (company_id) REFERENCES Company (company_id) );
-
 
 CREATE TABLE ProjectInfo (
 	profile_id	INT,
@@ -86,7 +80,7 @@ CREATE TABLE EducationInfo (
 	institution_name	VARCHAR(45),
 	start_date		DATE,
 	end_date		DATE,
-     	isGraduted		TINYINT(1) NOT NULL,
+     	isGraduated		TINYINT(1) NOT NULL,
 	cgpa			DOUBLE NOT NULL,
         description		VARCHAR(100),
 	PRIMARY KEY(profile_id, institution_name, start_date),
