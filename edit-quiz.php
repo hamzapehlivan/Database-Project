@@ -81,8 +81,9 @@
 						<div class = "container" style="">
 								<button type="submit" class="btn-warning btn-lg" formaction="editSelectedQuiz.php">Edit Selected Quiz</button>
 								<br><br>
-								<button type="submit" class="btn-danger btn-lg" formaction="deleteQuiz.php">Delete Selected Quiz</button>
+								<button type="submit" class="btn-danger btn-lg" formaction="deleteQuiz.php" onclick="alert('The Selected Quiz is Deleted!');">Delete Selected Quiz</button>
 						</div>
+						
 						<div class = "container" style="padding-left:50em; top:-10px;">
 								<a href="quizProperty.php"><button type="button" class="btn-success btn-lg">Create a New Quiz</button> </a>
 						</div>	<br><br>
