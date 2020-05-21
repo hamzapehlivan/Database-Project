@@ -20,20 +20,28 @@
 	
 	</div>
 	<script type = "text/javascript">
+		var display = true;
 		setInterval(function () {
 				
 			var xhr = new XMLHttpRequest();
+			
 			xhr.open ("GET", "countdown.php", false);
 			xhr.send(null);
 			var response = xhr.responseText
 			document.getElementById("timer").innerHTML = response;
 			
 			if (response == "00:00:00") {
+				if (display == true) {
+					display = false;
+					alert ("Time is Up");
+				}
 				document.getElementById("endbtn").click();
 			}
 			
 		}, 1000);
 	</script>
+	
+	
 	
 		<?php
 			require_once ('connect.php');
@@ -75,8 +83,9 @@
 				
 				
 				echo "<div class = 'row buttons'> ";
-				echo "<div class = 'col-lg-2'><button type = 'submit' class='btn btn-success'>Submit Answer </button></div>";
-				echo "<div class = 'col-lg-2'><a href = 'end_quiz.php?attempt_id={$attempt_id}&isForced=1' ><button class='btn btn-danger' type = 'button'>End Quiz</button> </a></div>";
+				echo "<div class = 'col-lg-2'><button type = 'submit' class='btn btn-primary'>Submit Answer </button></div>";
+				echo "<div class = 'col-lg-2'><a href = 'end_quiz.php?attempt_id={$attempt_id}&isForced=1'  onclick=\"return confirm('Are You Sure?')\"><button class='btn btn-danger' type = 'button'>End Quiz</button> </a></div>";
+				echo "<a href = 'end_quiz.php?attempt_id={$attempt_id}&isForced=1' id = 'endbtn' hidden> </a>";
 				echo "</div>";
 				
 				echo "</form>";

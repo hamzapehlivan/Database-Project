@@ -38,7 +38,7 @@
 					<a class="nav-link" href="#">Profile</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="developer_main.php">Attempt Quiz</a>
+					<a class="nav-link" href="developer_solve_quiz.php">Attempt Quiz</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Quiz Results<span class="sr-only">(current)</span></a>
