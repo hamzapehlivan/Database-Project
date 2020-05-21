@@ -13,10 +13,10 @@
   <body style="background: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url('image/background.jpg');
 					background-size: cover; background-position: center;">
 	
-	<div class="container">
-		<h2>CSCAREER</h2>
-		<p class="bg-info text-white">Admin Account</p>
-	</div>
+	<nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
+			<a class="navbar-brand" >CSCareer</a>					
+	</nav>
+	<br><br>
 	<div class= "container"	 style = "background: rgba(211, 211, 211, 0.3);">
 		<form action="addQuiz.php" method="post">
 			<div class="form-group">
@@ -56,12 +56,10 @@
 						<label for="new_time" style = 'color:#FFFFFF; font-size: 19px;'>Write the maximum time given to the quiz:</label>
 						<input type="new_time" name="new_time" size="40" class="form-control input-sm" required>
 					</div>	
-						
-				
-					<br>
-					<center><button type="submit" class="btn-success btn-lg">Next</center></button>
+					<br>	
+					<center><button type="submit" class="btn-success btn-lg" style = "float: right">Next</center></button>
 					<br><br>
-			</div>
+			</div><br>
 		</form>
 	</div>
 		
