@@ -13,10 +13,10 @@
   <body style="background: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url('image/background.jpg');
 					background-size: cover; background-position: center;">
 	
-	<div class="container">
-		<h2>CSCAREER</h2>
-		<p class="bg-info text-white">Admin Account</p>
-	</div>
+	<nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
+			<a class="navbar-brand" >CSCareer</a>					
+	</nav>
+	<br><br>
 	<div class= "container"	 style = "background: rgba(211, 211, 211, 0.3);">
 		<form action="updateQuiz.php" method="post">
 			<div class="form-group">
