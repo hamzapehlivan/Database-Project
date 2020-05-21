@@ -21,8 +21,8 @@
     		<ul class="nav navbar-nav">
       			<li class="active"><a href="">Home</a></li>
 				<li><a href="representative-profile.php">Profile</a></li>
-				<li><a href="">See Developers</a></li>
-      			<li><a href="">Check Interview Requests</a></li>
+				<li><a href="view_quiz_category.php">View Quizzes</a></li>
+      			<li><a href="sent_interview_request.php">Check Interview Requests</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
       			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>

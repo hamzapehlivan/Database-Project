@@ -57,8 +57,8 @@
     		<ul class="nav navbar-nav">
       			<li><a href="representative.php">Home</a></li>
 				<li class="active"><a href="">Profile</a></li>
-				<li><a href="">See Developers</a></li>
-      			<li><a href="">Check Interview Requests</a></li>
+				<li><a href="view_quiz_category.php">View Quizzes</a></li>
+      			<li><a href="sent_interview_request.php">Check Interview Requests</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
       			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>

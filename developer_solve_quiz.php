@@ -37,7 +37,7 @@
 					</li>
 					
 					<li class="nav-item">
-						<a class="nav-link" href="#">Interview Requests</a>
+						<a class="nav-link" href="developer_requests.php">Interview Requests</a>
 					</li>
 				</ul>
 				

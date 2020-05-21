@@ -11,49 +11,58 @@
 		<link rel="stylesheet" href="css/navbar-style.css">
 		<link rel="stylesheet" href="css/developer-result-style.css">
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<style>
+			body, html {
+			height: 100%;
+			margin: 0;
+			}
+
+			.bg {
+			/* The image used */
+			background-image: url("background.png");
+
+			/* Full height */
+			height: 100%; 
+
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			}
+			.a {
+  			margin: 10px 0px  0px 0px;
+  			
+			}
+		</style>
 		
-		<script>
-			//JQuery
-			$(document).ready(function () {
-					$('.drp-btn').click( function () {
-						var attempt_id = $(this).data("att");
-						var quiz_id = $(this).data("qz");
-						$('#feedback').load('change_result.php', {attempt : attempt_id, quiz: quiz_id});
-					});
-					
-					
-			});
-		
-		</script>
 		
 	</head>
 	
 	<body>
-		<!-- If developer sign out, direct her/him to homepage -->
-		<?php
-			session_start();
-			if(!isset($_SESSION['developer_logged_in']))
-				header("Location: index.php");  
-		?>
+	<!-- If representative sign out, direct her/him to homepage -->
+	<?php
+		session_start();
+      	if(!isset($_SESSION['representative_logged_in']))
+			header("Location: index.php");
+	?>
+	
 	<nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
 		<a class="navbar-brand" href="#">CSCareer</a>
 
 			<ul class="navbar-nav mr-auto d-print leftm">
+			
 				<li class="nav-item">
-					<a class="nav-link" href="developer.php">Home</a>
+					<a class="nav-link" href="representative.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="developer-profile.php">Profile</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="developer_solve_quiz.php">Attempt Quiz</a>
+					<a class="nav-link" href="representative-profile.php">Profile</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Quiz Results<span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="view_quiz_category.php">View Quizzes<span class="sr-only">(current)</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link" href="developer_requests.php">Interview Requests</a>
+					<a class="nav-link" href="#">Interview Requests</span></a>
 				</li>
 			</ul>
 			
@@ -67,42 +76,47 @@
 				 </li>
 			</ul>
 	</nav>
-		
-		<div class = "container">
-		
-		<?php
-			require_once ('connect.php');
-			$developer_id = $_SESSION['developer_id'];
-			$initialClick = 1;
-			
-			// Find the attempts of the developer 
-			$sql = "SELECT attempt_id, category_name, date, quiz_id FROM quiztrial natural join quiz WHERE developer_id = {$developer_id} ORDER BY attempt_id DESC";
-			$result = mysqli_query ($conn, $sql) or die(mysqli_error($conn));
-		
-			echo "<div class = 'dropdown'>";
-			echo '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Quiz</button>';
-			echo '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
-			
-			while ($row = mysqli_fetch_array ($result)) {
-				echo "<a href='#' data-att= '{$row['attempt_id']}' data-qz = '{$row['quiz_id']}' class = 'dropdown-item drp-btn'>{$row['category_name']} / {$row['date']}</a>";
-				
-			}
-			echo "</div> </div>";
-			
-			
-			
-			// Show the selected attempt
-			
-			echo "<section id = 'feedback' class ='feedback'><h5>Choose a Quiz to View Results</h5></section>";
-			
+	<div class="bg">
+    <div class="container">
+    <?php
+    $developer_id = $_REQUEST['developer_id'];
+    $quiz_id = $_REQUEST['quiz_id'];
+	$_SESSION["request"] = 1;
+		echo "<div class='login-box'>
+			<div class='row'>
+				<div class='col-md-2'></div>
+				<div class='col-md-10 login-center'>
+				<h1 class='text-center'>Send Interview Request</h1>
+				<form action='insertrequest.php?&developer_id={$developer_id}&quiz_id={$quiz_id}' method='post'>
+					<div class='form-group'>
+						
+						<label class='label control-label'>Date</label>
+						<div class='input-group'>
+							<span class='input-group-addon'><span class='glyphicon glyphicon-envelope'></span></span>
+							<input type='text' name='date' class='form-control' required>
+						</div>
+						<label class='label control-label'>Job Description</label>
+						<div class='input-group'>
+							<span class='input-group-addon'><span class='glyphicon glyphicon-lock'></span></span>
+							<input type='text' name='jd' class='form-control' required>
+						</div>
+						
+						<button type='submit' class='btn btn-secondary a' >Submit</button>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>";
 
-        ?>
-
-		</div>
+        ?>	
+	</div>
+	</div>
+    
+	
 		
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
--->   
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>	
 		

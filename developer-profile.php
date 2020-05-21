@@ -144,7 +144,7 @@
 				<li class="active"><a href="">Profile</a></li>
 				<li><a href="developer_solve_quiz.php">Attempt Quiz</a></li>
       			<li><a href="developer_result.php">Quiz Results</a></li>
-      			<li><a href="">Interview Requests</a></li>
+      			<li><a href="developer_requests.php">Interview Requests</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
       			<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
