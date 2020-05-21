@@ -13,12 +13,10 @@
   <body style="background: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url('image/background.jpg');
 					background-size: cover; background-position: center;">
 	  
-	
-	  
-	<div class="container">
-		<h2>CSCAREER</h2>
-		<p class="bg-info text-white">Admin Account</p>
-	</div>
+	<nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
+			<a class="navbar-brand" >CSCareer</a>					
+	</nav>
+	<br><br>
 	<div class= "container"	 style = "background: rgba(211, 211, 211, 0.3);">	
 		<form  method="post">
 			<div class="form-group">
@@ -133,22 +131,7 @@
 					</div>
 				
 				<br>
-				<!--
-				<div class="input-group">
-						<label for="subjects">Select its Subjects (to select more than 1, hold ctrl):</label>
-							<select name="subjects[]" multiple size="5">
-								<?php
-									require_once ('connect.php');
-									
-									$sql = "select category_name from category";
-									$result = mysqli_query ($conn, $sql) or die(mysqli_error($conn));
-									while ( $row = mysqli_fetch_array ($result)) {
-										echo "<option value='{$row['category_name']}'>{$row['category_name']}</option>";
-									}
-								?>
-							</select>
-				</div
-				-->
+				
 				<div class="input-group">
 					<label for="subjects" style = "color:#FFFFFF; font-size: 19px;">Select its Subjects:</label>
 							<?php
@@ -185,7 +168,7 @@
 				<br><br><br>
 			</div>
 		</form>
-	</div>
+	</div><br>
 	 <?php
 		require_once ('connect.php');
 		
