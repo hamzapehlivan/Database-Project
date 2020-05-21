@@ -83,8 +83,17 @@
 </head>
 <body>
 	<?php
+	session_start();	
+	// If developer didn't sign out, direct her/him to developer homepage
+	if(isset($_SESSION['developer_logged_in']))
+		header("Location: developer.php");
+	// If representative didn't sign out, direct her/him to representative homepage
+	if(isset($_SESSION['representative_logged_in']))
+		header("Location: representative.php");	
+	?>
+	
+	<?php
 		require_once ('connect.php');
-		session_start();
 
 		// return all companies from database
 		$query = "select company_name, website from company ";

@@ -13,13 +13,21 @@
 	</head>
 	
 	<body>
-		
+		<!-- If developer sign out, direct her/him to homepage -->
+		<?php
+			session_start();
+      		if(!isset($_SESSION['developer_logged_in']))
+				header("Location: index.php");  
+		?>
 		<nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Home</a>
+			<a class="navbar-brand" href="#">CSCareer</a>
 
 				<ul class="navbar-nav mr-auto d-print leftm">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Profile</a>
+						<a class="nav-link" href="developer.php">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="developer-profile.php">Profile</a>
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="#">Attempt Quiz <span class="sr-only">(current)</span></a>
@@ -49,7 +57,6 @@
 			<?php
 			
 				require_once ('connect.php');
-				session_start();
 				
 				$developer_id = $_SESSION['developer_id'];
 				// If developer finsihed succesfully a trial, a quiz will not be solved again

@@ -41,7 +41,15 @@
 
 </head>
 <body>
-
+	<?php
+	session_start();	
+	// If developer didn't sign out, direct her/him to developer homepage
+	if(isset($_SESSION['developer_logged_in']))
+		header("Location: developer.php");
+	// If representative didn't sign out, direct her/him to representative homepage
+	if(isset($_SESSION['representative_logged_in']))
+		header("Location: representative.php");	
+	?>
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
     		<div class="navbar-header">

@@ -37,7 +37,7 @@ if($num == 1){
 	
 	// Get user_id and fullname
 	$result_user = mysqli_query($conn, " select user_id, fullname from user where email = '$email' " );
-	$row = mysqli_fetch_assoc($result_user);
+	$row = mysqli_fetch_array($result_user);
     $userid = $row["user_id"];
     $fullname = $row["fullname"]; 
 	
@@ -47,7 +47,8 @@ if($num == 1){
 	$profile_id = $row ['LAST_INSERT_ID()'];
 		
 	// Insert profile_id and user_id to developer table
-	$insert_developer = mysqli_query($conn, " insert into developer(developer_id, profile_id) values ('$userid', '$profile_id')");
+	$insert_developer = mysqli_query($conn, " insert into developer( developer_id, profile_id) values ('$userid', '$profile_id') " ) or die(mysqli_error($conn));
+	
 	$_SESSION['developer_id'] = $userid;
 	$_SESSION['profile_id'] = $profile_id;
 	$_SESSION['email'] = $email;
@@ -55,6 +56,12 @@ if($num == 1){
 	
 	// Set developer as logged in
 	$_SESSION['developer_logged_in'] = true;
+	
+	/*
+	echo $_SESSION['developer_id'];
+	echo "   ";
+	echo $profile_id;
+	*/
 	
 	header('location:developer.php');
 }

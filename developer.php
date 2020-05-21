@@ -21,8 +21,8 @@
     		<ul class="nav navbar-nav">
       			<li class="active"><a href="">Home</a></li>
 				<li><a href="developer-profile.php">Profile</a></li>
-				<li><a href="">Attempt Quiz</a></li>
-      			<li><a href="">Quiz Results</a></li>
+				<li><a href="developer_solve_quiz.php">Attempt Quiz</a></li>
+      			<li><a href="developer_result.php">Quiz Results</a></li>
       			<li><a href="">Interview Requests</a></li>
     		</ul>
 			<ul class="nav navbar-nav navbar-right">
