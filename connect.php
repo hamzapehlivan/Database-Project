@@ -1,5 +1,5 @@
 <?php
-   define('SERVER', 'localhost:3308');
+   define('SERVER', 'localhost');
    define('USERNAME', 'root');
    define('PASSWORD', '');
    define('DATABASE', 'cscareer');
