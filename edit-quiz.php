@@ -52,9 +52,9 @@
 		
 		
 	<div class="container">
-		<h2>CSCAREER</h2>
+		<br><br>
 		<div class= "container"	 style = "background: rgba(211, 211, 211, 0.3);">
-				<br><center><p><font size="6" color="#061465"><b>Edit a Quiz or Create a New One</b></font></p></center>
+				<br><center><p><font size="6" color="#000000"><b>Edit/Delete a Quiz or Create a New One</b></font></p></center>
 			
 			<div class = "container">
 				<br>
@@ -77,21 +77,19 @@
 											?>
 										</select>
 						</div>
-						<br><br><br><br><br>
+						<br><br><br>
 						<div class = "container" style="">
 								<button type="submit" class="btn-warning btn-lg" formaction="editSelectedQuiz.php">Edit Selected Quiz</button>
-								<button type="submit" class="btn-danger btn-lg" formaction="deleteQuiz.php">Delete Quiz</button>
-								
+								<br><br>
+								<button type="submit" class="btn-danger btn-lg" formaction="deleteQuiz.php">Delete Selected Quiz</button>
 						</div>
+						<div class = "container" style="padding-left:50em; top:-10px;">
+								<a href="quizProperty.php"><button type="button" class="btn-success btn-lg">Create a New Quiz</button> </a>
+						</div>	<br><br>
 				  </div>
 				</form>
 			</div>
-	
-			<div class = "container" style="padding-left:50em; top:-10px;">
-				<a href="quizProperty.php"><button type="button" class="btn-success btn-lg">Create New Quiz</button> </a>
-			</div>	<br><br>
-	 	</div>
-					
+	 	</div>				
 	</div>		
 			
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
