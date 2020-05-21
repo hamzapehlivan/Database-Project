@@ -39,6 +39,7 @@
           				<li><a href="representative-register.php">Sign Up</a></li>
         			</ul>
       			</li>
+				<li><a href="companies.php">Companies</a></li>
       			<li><a href="about.php">About</a></li>
     		</ul>
   		</div>
