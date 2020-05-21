@@ -12,10 +12,10 @@
   </head>
   <body style="background: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url('image/background.jpg');
 					background-size: cover; background-position: center;">
-	<div class="container">
-		<h2>CSCAREER</h2>
-		<p class="bg-info text-white">Admin Account</p>
-	</div>
+	 <nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
+			<a class="navbar-brand" >CSCareer</a>					
+	</nav>
+	<br><br>  
 	<div class= "container"	 style = "background: rgba(211, 211, 211, 0.3);">	
 		
 	<?php
@@ -118,7 +118,7 @@
 	?>
 		<br><br><br><br>
 	 </div>
-	  <br><br><br><br>
+	  <br><br>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
