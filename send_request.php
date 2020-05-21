@@ -79,15 +79,31 @@
 	<div class="bg">
     <div class="container">
     <?php
+	require_once ('connect.php');
+	$initialClick = 1;
+	
     $developer_id = $_REQUEST['developer_id'];
-    $quiz_id = $_REQUEST['quiz_id'];
-	$_SESSION["request"] = 1;
+	$quiz_id = $_REQUEST['quiz_id'];
+	$sql = "SELECT MAX(request_id) as max_id FROM request";
+	$result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+	if ( $result== null){
+		$request_id = 1;
+	}
+	else{
+		while ($row = mysqli_fetch_array ($result)) {
+			$request_id = $row['max_id'] + 1;
+		}
+		
+	}
+	
+	
 		echo "<div class='login-box'>
 			<div class='row'>
 				<div class='col-md-2'></div>
 				<div class='col-md-10 login-center'>
 				<h1 class='text-center'>Send Interview Request</h1>
-				<form action='insertrequest.php?&developer_id={$developer_id}&quiz_id={$quiz_id}' method='post'>
+				<form action='insertrequest.php?&developer_id={$developer_id}&quiz_id={$quiz_id}&request_id={$request_id}' method='post'>
 					<div class='form-group'>
 						
 						<label class='label control-label'>Date</label>
