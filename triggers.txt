@@ -1,3 +1,4 @@
+DELIMETER $$
 CREATE TRIGGER `initializequiz` AFTER INSERT ON `developer`
  FOR EACH ROW BEGIN
 	DECLARE done INT DEFAULT FALSE;
@@ -13,4 +14,5 @@ CREATE TRIGGER `initializequiz` AFTER INSERT ON `developer`
             INSERT INTO tries VALUES (NEW.developer_id, (SELECT quiz_id FROM quiz WHERE category_name = aval),3);
          END LOOP;
     CLOSE cur;
-END
+END $$
+DELIMETER ;
