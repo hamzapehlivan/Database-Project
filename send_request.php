@@ -86,15 +86,13 @@
 	$quiz_id = $_REQUEST['quiz_id'];
 	$sql = "SELECT MAX(request_id) as max_id FROM request";
 	$result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
-	if ( $result== null){
+	$row = mysqli_fetch_array ($result);
+	
+	if ( is_null ($row['max_id']) ){
 		$request_id = 1;
 	}
 	else{
-		while ($row = mysqli_fetch_array ($result)) {
-			$request_id = $row['max_id'] + 1;
-		}
-		
+		$request_id = $row['max_id'] + 1;
 	}
 	
 	

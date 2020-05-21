@@ -71,7 +71,7 @@
 
 												while ( $row = mysqli_fetch_array ($result) )
 												{
-													echo "<option value='{$row['quiz_title']}'>{$row['quiz_title']}</option>";
+														echo "<option value='{$row['quiz_title']}'>{$row['quiz_title']}</option>";
 												}
 											
 											?>
@@ -80,6 +80,8 @@
 						<br><br><br><br><br>
 						<div class = "container" style="">
 								<button type="submit" class="btn-warning btn-lg" formaction="editSelectedQuiz.php">Edit Selected Quiz</button>
+								<button type="submit" class="btn-danger btn-lg" formaction="deleteQuiz.php">Delete Quiz</button>
+								
 						</div>
 				  </div>
 				</form>

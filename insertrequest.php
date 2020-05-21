@@ -15,7 +15,7 @@
 			
             $rep_id = $_SESSION['representative_id'];
             $status = 'sent';
-            $request = $_SESSION['request'];
+            $request = $_REQUEST['request_id'];
             $number = 1;
             $sql = " SELECT developer_id, acceptedStatus, representative_id FROM request";
             $alert = 0;
