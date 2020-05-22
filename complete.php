@@ -12,10 +12,10 @@
   </head>
   <body style="background: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url('image/background.jpg');
 					background-size: cover; background-position: center;">
-	<nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
-			<a class="navbar-brand" >CSCareer</a>					
-	</nav>
-	<br><br>
+	<div class="container">
+		<h2>CSCAREER</h2>
+		<p class="bg-info text-white">Admin Account</p>
+	</div>
 	<div class= "container"	 style = "background: rgba(211, 211, 211, 0.3);">	
 		<form  method="post">
 			<div class="form-group">
@@ -74,7 +74,7 @@
 									$result = mysqli_query ($conn, $sql) or die(mysqli_error($conn));
 									//echo "<br>";
 									while ( $row = mysqli_fetch_array ($result)) {
-										echo "<input type='checkbox' name='subjects[]' value='{$row['category_name']}' style = 'margin-right: 5px;'><label style = 'color: #000000'>{$row['category_name']}</label></input>";
+										echo "<input type='checkbox' name='subjects[]' value='{$row['category_name']}' style = 'margin-right: 5px;'>{$row['category_name']}</input>";
 										echo "<br>";
 									}
 							?>
@@ -82,12 +82,12 @@
 				</div>
 				
 				<br><br>
-				<button type="submit" class="btn-warning btn-lg" formaction="addMoreQuestion.php">Add More Questions</button>
+				<button type="submit" class="btn-warning btn-lg" formaction="addMoreQuestion.php">Add More Question</button>
 				<button type="submit" class="btn-success btn-lg" formaction="addQuestion.php" style="float: right;">Done</button>
 				<br><br>
 			</div>
 		</form>
-	</div><br>
+	</div>
 			 
 	
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -14,19 +14,15 @@
 		
 		<style>
             .btn {
-            border: none;
-            background-color: inherit;
             padding: 5px 28px;
             font-size: 16px;
             cursor: pointer;
             display: inline-block;
             }
 
-            .btn:hover {background: #eee;}
-
-            .success {color: green;}
-            .danger {color: red;}
-        </style>
+           <!-- .success {color: green;}
+            .danger {color: red;}-->
+        </style> 
         <style scoped>
         .greenText {color:green;}
         </style>
@@ -128,8 +124,8 @@
                 
                 if( $row['acceptedStatus'] == 'sent'){
                     echo "<form action='update_request_status.php?request_id={$row['request_id']}' method='post'>";
-                    echo "<button class='btn success' name='subject' type='submit' value='accepted'>Accept</button>
-                          <button class='btn danger' name='subject' type='submit' value='declined'>Decline</button>";
+                    echo "<div class = 'col-3' > <button class='btn btn-success' name='subject' type='submit' value='accepted'>Accept</button></div>
+                         <div class = 'col-3' ><button class='btn btn-danger' name='subject' type='submit' value='declined'>Decline</button> </div>";
                     echo "</form>";
                 }
                 elseif( $row['acceptedStatus'] == 'declined'){

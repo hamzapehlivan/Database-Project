@@ -66,7 +66,7 @@
 				$success = False;
 				while ( $row = mysqli_fetch_array ($result) ) { //&& $success == False
 				
-					if ( is_null ($row['issuccessful']) == False || $row['issuccessful'] == 1) {
+					if ( $row['issuccessful'] == 1) {
 						$success = True;
 					}	
 				}

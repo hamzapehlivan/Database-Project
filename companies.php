@@ -96,7 +96,7 @@
 		require_once ('connect.php');
 
 		// return all companies from database
-		$query = "select company_name, website from company ";
+		$query = "select company_name, website from company order by company_name";
 		$result = mysqli_query($conn, $query);
 		$companies = Array();
 		$websites = Array();
@@ -106,9 +106,15 @@
 		}
 
 		// take searched companies
-		$isSearched = $_SESSION['isSearched'];
-		$possible_companies = $_SESSION['possible_companies'];
-		$companies_website = $_SESSION['companies_website'];
+		if(isset($_SESSION['isSearched'])){
+			$isSearched = $_SESSION['isSearched'];
+			$possible_companies = $_SESSION['possible_companies'];
+			$companies_website = $_SESSION['companies_website'];
+		} else {
+			$isSearched = null;
+			$possible_companies = null;
+			$companies_website = null;
+		}
 	?>
 	
 	<nav class="navbar navbar-inverse">
@@ -168,6 +174,7 @@
 					echo "<p><a href='$companies_website[$i]' style='color:white'> $company </a></p>";
 					$i ++;
 				}
+				session_unset();
 			}
 			?>
 		</div>

@@ -7,7 +7,7 @@ session_start();
 $searched_company = $_POST['search'];
 
 // Select current prefered cities
-$query = " select company_name, website from company where company_name LIKE '%{$searched_company}%' ";
+$query = " select company_name, website from company where company_name LIKE '%{$searched_company}%' order by company_name ";
 $result = mysqli_query($conn, $query);
 $possible_companies = Array();
 $companies_website = Array();

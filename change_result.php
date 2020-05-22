@@ -15,7 +15,7 @@
 	
 	}		
 	
-	$sql = "SELECT category_name, SUM(CASE WHEN isCorrect = 1 THEN 1 ELSE 0 END) AS score FROM answer NATURAL JOIN categorized_as "; 
+	$sql = "SELECT category_name, SUM(CASE WHEN isCorrect = 1 THEN 1 ELSE -1 END) AS score FROM answer NATURAL JOIN categorized_as "; 
 	$sql .= "WHERE attempt_id = {$attempt_id} GROUP BY category_name";
 	$result = mysqli_query ($conn, $sql) or die(mysqli_error($conn));
 	$goodAt = array();
@@ -76,7 +76,7 @@
 	
 	echo "<div ><div class = 'row'>";
 	foreach($badAt as $item2) {
-		echo "<div class = 'col-lg-2'><h5>{$item2}</h5></div>";
+		echo "<div class = 'col-lg-12'><h5>{$item2}</h5></div>";
 	}
 	echo "</div>";
 
