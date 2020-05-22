@@ -1,0 +1,19 @@
+body{
+	background-image: url("images/quiz_background.png");
+	background-size: cover;
+	background-position : center;
+		
+}
+.dropdown-item:hover {
+	background-color: skyblue;
+	color : white;
+}
+.dropdown {
+	float: right;
+}
+.feedback {
+	margin-top:50px;
+}
+
+
+		

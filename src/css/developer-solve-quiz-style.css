@@ -1,0 +1,22 @@
+body {
+	background-image: url("images/quiz_background.png");
+	background-size: cover;
+	background-position: center;
+}
+.quiz{
+	padding-bottom: 40px;
+}
+h1 {
+	color:red;
+	margin-top: 20px;
+}
+.text {
+	margin-top:100px;
+}
+
+h6 {
+	margin-top:15px;
+}
+.success {
+	margin-top:50px;
+}

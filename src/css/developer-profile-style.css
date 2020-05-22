@@ -1,0 +1,117 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url("images/background_login_register.jpg");
+	background-size: cover;
+	background-position: center;
+	
+}
+
+.container{
+	background: rgba(211, 211, 211, 0.3);
+}
+
+h6{
+	color: black;
+	font-size: 20px;
+	font: bolder;
+	font-family: Berkshire Swash;
+}
+
+h1{
+	font-size: 40px;
+	text-shadow: 3px 3px #222222;
+	color: #DBDBDB;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+h3{
+	color: black;
+	font: bold;
+	text-decoration: underline;
+}
+
+.label{
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.control-label{
+	color: #1E1E1E;
+}
+
+
+.form-control{
+	background: transparent;
+	border-radius: 0px;
+	border: 1px solid #DBDBDB;
+	padding: 15px;
+	color: #DBDBDB;
+	font-size: 16px;
+}
+
+.btn-default{
+	border-radius: 0px;
+	width: auto;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+option{
+	color: #DBDBDB;
+}
+
+.modal-content {
+	background-color: #595872;
+    margin: 10vh auto;
+ 	padding: 20px;
+    border: 1px solid #ffffff;
+    width: 60%; 
+}
+
+.close {
+	color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: #DBDBDB;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#additional-data{
+	
+	color: #DBDBDB;
+	border: 2px solid black;
+	margin-left: 32vh;
+	width: 90vh;
+	padding: 15px;
+}
+
+.glyphicon {
+    font-size: 20px;
+}
+
+#mini-info{
+	font-size: 14px;
+	
+}
+
+#mini-info-readonly{
+	font-size: 14px;
+	background-color: transparent;
+}
+
+hr{
+	border-color: #DBDBDB;
+	width: 150vh;
+	box-shadow: 2px 2px black;
+}

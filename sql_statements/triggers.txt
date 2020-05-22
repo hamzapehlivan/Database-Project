@@ -1,0 +1,18 @@
+DELIMETER $$
+CREATE TRIGGER `initializequiz` AFTER INSERT ON `developer`
+ FOR EACH ROW BEGIN
+	DECLARE done INT DEFAULT FALSE;
+    DECLARE aval VARCHAR(20);
+    DECLARE cur CURSOR FOR SELECT DISTINCT category_name FROM quiz WHERE 1;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    OPEN cur;
+        ins_loop: LOOP
+         FETCH cur INTO aval;
+            IF done THEN
+                LEAVE ins_loop;
+            END IF;
+            INSERT INTO tries VALUES (NEW.developer_id, (SELECT quiz_id FROM quiz WHERE category_name = aval),3);
+         END LOOP;
+    CLOSE cur;
+END $$
+DELIMETER ;
